@@ -116,7 +116,7 @@ Annex A. Delivery Method
 Shipping containers used must be temperature and humidity controlled, and sensor readings must be logged at least 1 per HOUR.
 
 Annex B. Acceptance Criteria
-The shipment must contain between 3490 and 3510 KG of "Grade I, Size 4, Zutano Mexican Avocados".
+The shipment must contain between 2995 and 3005 KG of "Grade I, Size 4, Zutano Mexican Avocados".
 Temperature readings for the shipment must be between 2°C and 13°C.
 Humidity readings for the shipment must be between 70% and 90%.
 Shipments that have a temperature or humidity reading outside the agreed range have a price penalty applied calculated using the Formula for Breach Penalty Calculation below. The breach penalty factor to be used is 0.2.
