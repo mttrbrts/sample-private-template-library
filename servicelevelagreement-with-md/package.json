@@ -1,13 +1,10 @@
 {
-    "name": "servicelevelagreement",
+    "name": "servicelevelagreement-with-md",
     "version": "0.0.1",
     "description": "A service level agreement that gives invoice credit based on service availability.",
     "cicero": {
         "template": "contract",
         "version": "^0.3.0"
-    },
-    "engines":{
-        "cicero": "^0.3"  
     },
     "engines":{
         "cicero": "^0.3"  
