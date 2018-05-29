@@ -1,6 +1,6 @@
 namespace org.accordproject.servicelevelagreement
 
-@AccordTemplateModel("servicelevelagreement")
+@AccordTemplateModel("servicelevelagreement-with-md")
 concept TemplateModel {
  o Integer paymentPeriod 
  o Double monthlyCapPercentage
