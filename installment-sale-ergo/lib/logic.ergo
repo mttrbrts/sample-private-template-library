@@ -14,7 +14,7 @@
  namespace org.accordproject.installmentsale
 
 contract InstallmentSale over TemplateModel {
-  clause init(request : Request) : Response {
+  clause init(request : InitializeRequest) : InitializeResponse {
     set state new InstallmentSaleState{
       stateId: "org.accordproject.installmentsale.InstallmentSaleState#1",
       status: "WaitingForFirstDayOfNextMonth",
@@ -22,7 +22,7 @@ contract InstallmentSale over TemplateModel {
       total_paid: 0.0,
       next_payment_month: 0.0
     };
-    return new Response{}
+    return new InitializeResponse{}
   }
 
   clause PayInstallment(request : Installment) : Balance emits PaymentObligation {

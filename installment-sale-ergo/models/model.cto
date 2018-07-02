@@ -4,6 +4,11 @@ import org.accordproject.cicero.contract.* from https://models.accordproject.org
 import org.accordproject.cicero.runtime.* from https://models.accordproject.org/cicero/runtime.cto
 import org.accordproject.money.MonetaryAmount from https://models.accordproject.org/money.cto
 
+transaction InitializeRequest extends Request {
+}
+transaction InitializeResponse extends Request {
+}
+
 transaction Installment extends Request {
   o Double amount
 }
