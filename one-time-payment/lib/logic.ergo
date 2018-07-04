@@ -21,12 +21,15 @@ contract OneTimePayment over OneTimePaymentContract {
 	 * The initialization logic for this clause immediately notifies the buyer that they have an obligation to make a payment
 	 */
   clause init(request : InitRequest) : InitResponse emits PaymentObligation {
-		emit new org.accordproject.cicero.runtime.PaymentObligation{
+	  // enforce (state.status = "UNINTIALIZED") 
+    // else throw "This contract has already been initialized. Current state is " ++ state.status;
+		
+    emit new org.accordproject.cicero.runtime.PaymentObligation{
 			contract: contract.contractId,
 			promisor: contract.buyer,
 			promisee: contract.seller,
 			amount: contract.initialAmount,
-			description: contract.partyA ++ " should pay contract amount to " ++ contract.partyB
+			description: contract.buyer ++ " should pay contract amount to " ++ contract.seller
 		};
 		set state new OneTimePaymentState {
 			stateId: "1",
@@ -38,7 +41,9 @@ contract OneTimePayment over OneTimePaymentContract {
   /**
 	 * Update the contract state once we've recieved a payment
 	 */
-  clause paymentRecieved(request : PaymentReceivedRequest): PaymentReceivedResponse {
+  clause paymentReceived(request : PaymentReceivedRequest): PaymentReceivedResponse {
+    enforce (state.status = "OBLIGATION_EMITTED") 
+    else throw "Either a payment obligation hasn't yet been emitted by the contract or payment notification has already been received";
 		set state new OneTimePaymentState {
 			stateId: state.stateId,
 			status: "COMPLETED"
